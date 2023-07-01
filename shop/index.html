@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body onload="onLoad()">
+    <nav class="navbar  sticky-top " style="background-color: #7b015c;">
+        <div class="container">
+            <div class="left-header justify-content-start">
+                <a class="navbar-brand" href="../">MeShop.</a>
+            </div>
+            <div class="right-header justify-content-end">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link " href ="../">Home</a></li>
+                    <li class="nav-item"><a class="nav-link " href ="../login">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href ="../signup">Signup</a></li>
+                    <li class="nav-item"><a class="nav-link" href ="../cart">My Cart</a></li>
+                    <li class="nav-item"><a class="nav-link " href ="../profile">Profile</a></li>   
+                </ul>
+            </div>  
+        </div>
+    </nav>
+    <div class=" container-fluid">
+        <div class="row">
+            <div class="col-2 border border-dark" style="background-color: #e6e6e0;"> 
+              <div class="colors  pt-4 ">
+                <p class="px-4">Color</p>
+                <div class="form-check">
+                  <input type="checkbox" id="redCheckbox">
+                  <label for="redCheckbox">Red</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" id="blueCheckbox">
+                  <label for="blueCheckbox">Blue</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" id="greenCheckbox">
+                  <label for="greenCheckbox">Green</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" id="blackCheckbox">
+                  <label for="blackCheckbox">Black</label>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" id="whiteCheckbox">
+                  <label for="whiteCheckbox">White</label>
+                </div>
+            </div>
+
+            <div class="sizes mt-4 pt-4 border-black border-top">
+                <p class="px-4">Sizes</p>
+                <div class="form-check ">
+                  <input type="checkbox" id="smallCheckbox">
+                  <label for="smallCheckbox">S</label>
+                </div>
+                <div class="form-check ">
+                  <input type="checkbox" id="mediumCheckbox">
+                  <label for="mediumCheckbox">M</label>
+                </div>
+                <div class="form-check ">
+                  <input type="checkbox" id="largeCheckbox">
+                  <label for="largeCheckbox">L</label>
+                </div>
+                <div class="form-check ">
+                  <input type="checkbox" id="xtraLargeCheckbox">
+                  <label for="xtraLargesmallCheckbox">XL</label>
+                </div>
+            </div>
+
+            <div class="rating-range mt-4 pt-4 border-black border-top">
+                <label for="ratingRange" class="form-label px-4">Rating</label>
+                <input type="range" class="form-range" min="0" max="5" value="0" step="1" id="ratingRange" >
+                <p>Current Rating: <span id="curr"></span></p>
+            </div>
+
+            <div class="price mt-4 pt-4 border-black border-top">
+                <p class="px-4">Price Range</p>
+                <div class="form-check ">
+                  <input   type="checkbox" id="below-25Checkbox" class="checkPriceRange" >
+                  <label for="below-25Checkbox">$0 to $25</label>
+                </div>
+                <div class="form-check ">
+                  <input   type="checkbox" id="between-25to50Checkbox"  class="checkPriceRange" >
+                  <label for="between-25to50Checkbox">$25 to $50</label>
+                </div>
+                <div class="form-check ">
+                  <input   type="checkbox" id="between-50to100Checkbox"  class="checkPriceRange" >
+                  <label for="between-50to100Checkbox">$50 to $100</label>
+                </div>
+                <div class="form-check ">
+                  <input   type="checkbox" id="above-100Checkbox"  class="checkPriceRange" >
+                  <label for="above-100Checkbox">$100 onwards</label>
+                </div>
+            </div>
+
+            <div class="apply-btn px-4 mb-5 pt-4 ">
+                <button type="submit" id="btn-filter" class="btn btn-primary" style="background-color: #7b015c; border: 2px solid black;">Apply Filter</button>
+            </div>
+        </div>
+
+        <div class="col-10 border border-dark pt-3 w=100  " style="height:120vh; padding-bottom: 80px;  overflow-y: scroll;" >
+            <div class="search-input">
+              <input type="search" id="search-input" onchange="searchItem()" placeholder="Search" class=" w-100 p-2" >
+            </div>
+
+            <div class="buttons mb-5 pt-4 ">
+                <button id="btn-all"  class="btn btn-filter  p-2" style="width: 19%; margin-right: 10px;">All</button>
+                <button id="btn-men" class="btn btn-filter p-2" style="width: 19%; margin-right: 10px;">Mens</button>
+                <button id="btn-women" class="btn btn-filter p-2" style="width: 19%;margin-right: 10px;">Womens</button>
+                <button id="btn-jewellery" class="btn btn-filter  p-2" style="width: 19%; margin-right: 10px;">Jewllery</button>
+                <button id="btn-electronics" class="btn  btn-filter p-2" style="width: 19%;">Electronics</button>
+            </div>
+            <div class="row   ">
+                <h2 class="mb-5">Men's Clothing</h2>
+                <div class="row" id="men-container" style="width: 100%;">
+                </div>
+            </div>
+            <div class="row   ">
+                <h2 class="mb-5">Jewllery</h2>
+                <div class="row" id="jewellery-container" style="width: 100%;">
+            </div>
+        </div>
+        <div class="row pt-4 ">
+            <h2 class="mb-5">Electronics</h2>
+            <div class="row" id="electronics-container">
+            </div> 
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

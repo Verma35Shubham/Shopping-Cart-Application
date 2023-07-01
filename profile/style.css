@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.left-header a {
+    color: #ffffff;
+}
+
+.right-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text-style {
+    color: #000000;
+}

@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.left-header a {
+    color: #ffffff;
+}
+
+.right-header li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.buttons button {
+    color: white;
+    border: 2px solid black;
+    background-color: #7b015c;
+}
+
+.card a {
+    color: white;
+    border: 2px solid black;
+    background-color: #7b015c;
+    width: 100%;
+}
+
+.card-body {
+    width: 100%;
+}
+
+.card {
+    align-items: center;
+}
+
+
+.card img {
+    width: 150px;
+    height: 200px;
+    margin: 20px;
+}
+
+.form-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background-color: #04AA6D;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+.form-range::-moz-range-thumb {
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background-color: #04AA6D;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+}
